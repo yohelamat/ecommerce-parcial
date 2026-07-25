@@ -18,5 +18,6 @@ steps:
   - 'gcr.io/$PROJECT_ID/api-ecommerce'
   - '--region'
   - 'us-central1'
-  options:
+
+options:
   logging: CLOUD_LOGGING_ONLY
