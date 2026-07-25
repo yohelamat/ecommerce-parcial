@@ -18,8 +18,7 @@ resource "google_sql_database_instance" "bd_tienda" {
   settings {
     tier = "db-f1-micro"
     ip_configuration {
-      ipv4_enabled    = true
-      private_network = google_compute_network.red_ecommerce.id
+      ipv4_enabled = true
     }
   }
 }
@@ -34,7 +33,7 @@ resource "google_cloud_run_service" "app_ecommerce" {
         image = "gcr.io/parcial-ecommerce-26/api-ecommerce"
         env {
           name  = "DB_HOST"
-          value = google_sql_database_instance.bd_tienda.private_ip_address
+          value = google_sql_database_instance.bd_tienda.public_ip_address
         }
       }
     }
