@@ -12,7 +12,7 @@ def home():
     db_host = os.environ.get("DB_HOST", "localhost")
     
     return jsonify({
-        "proyecto": "Startup E-commerce - Parcial",
+        "proyecto": "Startup E-commerce - Parcial (Versión Final)",
         "estudiante": "Yohel Amat",
         "fecha": fecha_actual,
         "estado_bd": f"Conectado a DB en {db_host}",
